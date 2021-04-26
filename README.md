@@ -59,6 +59,7 @@ Implement one failing test and at least one passing test:
 
 
 **TEST_CASE_01**("Test the Number of continuous ranges") 
+	
 	{
 
   		float CurrentSamples[]={1,2,3,4,5,6,7};
@@ -84,6 +85,7 @@ Implement one failing test and at least one passing test:
 
 
 **TEST_CASE_02**("Test the Number of continuous ranges > 1") 
+	
 	{
 	
   		float CurrentSamples[]={1,2,3,4,10,11,12,13};
@@ -98,28 +100,28 @@ Implement one failing test and at least one passing test:
 
 **Impl_Iteration_02:**
 
-int detect_ContRanges_Readings(const float* CurrentSamples, int NumberofReadings)
-{ 
-	int NumberofContRange=0;
-	int startNum=*CurrentSamples;
-	for(int itr=1; itr<NumberofReadings; itr++)
-	{
-		if((startNum+1)== *(CurrentSamples+itr))
-			{
-				startNum=*(CurrentSamples+itr);
-			}
-		else
-			{
-				NumberofContRange++;
-				startNum=*(CurrentSamples+itr);
-			}
+	int detect_ContRanges_Readings(const float* CurrentSamples, int NumberofReadings)
+		{ 
+			int NumberofContRange=0;
+			int startNum=*CurrentSamples;
+			for(int itr=1; itr<NumberofReadings; itr++)
+				{
+					if((startNum+1)== *(CurrentSamples+itr))
+						{
+						startNum=*(CurrentSamples+itr);
+						}
+					else
+						{
+						NumberofContRange++;
+						startNum=*(CurrentSamples+itr);
+						}
 			
-	}
-	if(*(CurrentSamples+NumberofReadings-1)-1==*(CurrentSamples+NumberofReadings-2))
-		NumberofContRange++;
+				}
+			if(*(CurrentSamples+NumberofReadings-1)-1==*(CurrentSamples+NumberofReadings-2))
+			NumberofContRange++;
 		
-	return NumberofContRange;
-}
+		return NumberofContRange;
+		}
 
 
 
