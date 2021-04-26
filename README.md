@@ -54,6 +54,8 @@ Implement one failing test and at least one passing test:
 
 
 
+*******************************************************************************************************
+
 
 
 **TEST_CASE_01**("Test the Number of continuous ranges") {
@@ -74,6 +76,11 @@ int detect_ContRanges_Readings(const float* CurrentSamples, int NumberofReadings
 {
 return 1;
 }
+
+
+
+*******************************************************************************************************
+
 
 
 **TEST_CASE_02**("Test the Number of continuous ranges > 1") {
@@ -116,6 +123,10 @@ int detect_ContRanges_Readings(const float* CurrentSamples, int NumberofReadings
 
 
 
+*******************************************************************************************************
+
+
+
 **TEST_CASE_03**("Test the Number of continuous ranges when adjacent values are same") {
 	
   float CurrentSamples[]={1,3,3,4,10,11,12,13};
@@ -154,6 +165,10 @@ int detect_ContRanges_Readings(const float* CurrentSamples, int NumberofReadings
 		
 	return NumberofContRange;
 }
+
+
+
+*******************************************************************************************************
 
 
 
@@ -199,6 +214,10 @@ int detect_ContRanges_Readings(const float* CurrentSamples, int NumberofReadings
 		
 	return NumberofContRange;
 }
+
+
+
+*******************************************************************************************************
 
 
 
@@ -255,6 +274,11 @@ int detect_ContRanges_Readings(const float* CurrentSamples, int NumberofReadings
 
 
 
+*******************************************************************************************************
+
+
+
+
 **TEST_CASE_06**("Test the Number of continuous ranges and NumofReadings") {
 	
   float CurrentSamples[]={1,4,3,5,10,11,12,13,14};
@@ -276,6 +300,10 @@ int detect_ContRanges_Readings(const float* CurrentSamples, int NumberofReadings
 
 **Impl_Iteration_06:**
 1. Find the number of readings in each range and stroge it in glabal array.
+
+
+
+*******************************************************************************************************
 
 
 
