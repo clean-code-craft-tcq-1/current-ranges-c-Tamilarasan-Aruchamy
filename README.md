@@ -86,13 +86,16 @@ return 1;
 **TEST_CASE_02**("Test the Number of continuous ranges > 1") {
 	
   float CurrentSamples[]={1,2,3,4,10,11,12,13};
+  
   int NumberofReadings=8;
+  
   int NumberofContRange=0;
   
   NumberofContRange=detect_ContRanges_Readings(CurrentSamples,NumberofReadings);
   
   REQUIRE(NumberofContRange == 2);
-}
+  
+  }
 
 
 
