@@ -15,7 +15,7 @@ what range of currents are most often encountered while charging.
 Consider a set of periodic current samples from a charging session to be:
 `3, 3, 5, 4, 10, 11, 12`
 
-### Functionality
+### Functionality 
 
 The continuous ranges in there are: `3,4,5` and `10,11,12`.
 
@@ -58,7 +58,8 @@ Implement one failing test and at least one passing test:
 
 
 
-**TEST_CASE_01**("Test the Number of continuous ranges") {
+**TEST_CASE_01**("Test the Number of continuous ranges") 
+{
 	
   float CurrentSamples[]={1,2,3,4,5,6,7};
   int NumberofReadings=7;
@@ -83,7 +84,8 @@ return 1;
 
 
 
-**TEST_CASE_02**("Test the Number of continuous ranges > 1") {
+**TEST_CASE_02**("Test the Number of continuous ranges > 1") 
+{
 	
   float CurrentSamples[]={1,2,3,4,10,11,12,13};
   
@@ -130,7 +132,8 @@ int detect_ContRanges_Readings(const float* CurrentSamples, int NumberofReadings
 
 
 
-**TEST_CASE_03**("Test the Number of continuous ranges when adjacent values are same") {
+**TEST_CASE_03**("Test the Number of continuous ranges when adjacent values are same") 
+{
 	
   float CurrentSamples[]={1,3,3,4,10,11,12,13};
   int NumberofReadings=8;
@@ -175,7 +178,8 @@ int detect_ContRanges_Readings(const float* CurrentSamples, int NumberofReadings
 
 
 
-**TEST_CASE_04**("Test the Number of continuous ranges when input order is different") {
+**TEST_CASE_04**("Test the Number of continuous ranges when input order is different") 
+{
 	
   float CurrentSamples[]={1,4,3,5,10,11,12,13};
   int NumberofReadings=8;
@@ -224,7 +228,8 @@ int detect_ContRanges_Readings(const float* CurrentSamples, int NumberofReadings
 
 
 
-**TEST_CASE_05**("Test the Number of continuous ranges and NumofReadings") {
+**TEST_CASE_05**("Test the Number of continuous ranges and NumofReadings") 
+{
 	
   float CurrentSamples[]={1,4,3,5,10,11,12,13};
   int NumberofReadings=8;
@@ -282,7 +287,8 @@ int detect_ContRanges_Readings(const float* CurrentSamples, int NumberofReadings
 
 
 
-**TEST_CASE_06**("Test the Number of continuous ranges and NumofReadings") {
+**TEST_CASE_06**("Test the Number of continuous ranges and NumofReadings") 
+{
 	
   float CurrentSamples[]={1,4,3,5,10,11,12,13,14};
   int NumberofReadings=8;
