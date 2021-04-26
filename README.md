@@ -68,7 +68,7 @@ Implement one failing test and at least one passing test:
   NumberofContRange=detect_ContRanges_Readings(CurrentSamples,NumberofReadings);
   
   REQUIRE(NumberofContRange == 1);
-}
+} 
 
 
 **Impl_Iteration_01:**
