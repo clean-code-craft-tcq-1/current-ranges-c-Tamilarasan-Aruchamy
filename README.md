@@ -130,44 +130,45 @@ Implement one failing test and at least one passing test:
 
 
 **TEST_CASE_03**("Test the Number of continuous ranges when adjacent values are same") 
-{
 	
-  float CurrentSamples[]={1,3,3,4,10,11,12,13};
-  int NumberofReadings=8;
-  int NumberofContRange=0;
+	{
+	
+  		float CurrentSamples[]={1,3,3,4,10,11,12,13};
+  		int NumberofReadings=8;
+  		int NumberofContRange=0;
   
-  NumberofContRange=detect_ContRanges_Readings(CurrentSamples,NumberofReadings);
+  		NumberofContRange=detect_ContRanges_Readings(CurrentSamples,NumberofReadings);
   
-  REQUIRE(NumberofContRange == 2);
-}
+  		REQUIRE(NumberofContRange == 2);
+	}
 
 
 
 **Impl_Iteration_03:**
 
-int detect_ContRanges_Readings(const float* CurrentSamples, int NumberofReadings)
-{ 
-	int NumberofContRange=0;
-	int startNum=*CurrentSamples;
-	for(int itr=1; itr<NumberofReadings; itr++)
-	{
-		if((startNum+1)== *(CurrentSamples+itr) || (startNum)== *(CurrentSamples+itr))
-			{
-				startNum=*(CurrentSamples+itr);
-			}
-		else
-			{
-				NumberofContRange++;
-				startNum=*(CurrentSamples+itr);
-			}
+	int detect_ContRanges_Readings(const float* CurrentSamples, int NumberofReadings)
+	{ 
+		int NumberofContRange=0;
+		int startNum=*CurrentSamples;
+		for(int itr=1; itr<NumberofReadings; itr++)
+		{
+			if((startNum+1)== *(CurrentSamples+itr) || (startNum)== *(CurrentSamples+itr))
+				{
+					startNum=*(CurrentSamples+itr);
+				}
+			else
+				{
+					NumberofContRange++;
+					startNum=*(CurrentSamples+itr);
+				}
 			
-	}
-	if((*(CurrentSamples+NumberofReadings-1)-1==*(CurrentSamples+NumberofReadings-2)) ||\
+		}
+		if((*(CurrentSamples+NumberofReadings-1)-1==*(CurrentSamples+NumberofReadings-2)) ||\
 			(*(CurrentSamples+NumberofReadings-1)==*(CurrentSamples+NumberofReadings-2)))
 		NumberofContRange++;
 		
-	return NumberofContRange;
-}
+		return NumberofContRange;
+	}
 
 
 
@@ -176,48 +177,49 @@ int detect_ContRanges_Readings(const float* CurrentSamples, int NumberofReadings
 
 
 **TEST_CASE_04**("Test the Number of continuous ranges when input order is different") 
-{
 	
-  float CurrentSamples[]={1,4,3,5,10,11,12,13};
-  int NumberofReadings=8;
-  int NumberofContRange=0;
+	{
+	
+  		float CurrentSamples[]={1,4,3,5,10,11,12,13};
+  		int NumberofReadings=8;
+  		int NumberofContRange=0;
   
-  NumberofContRange=detect_ContRanges_Readings(CurrentSamples,NumberofReadings);
+  		NumberofContRange=detect_ContRanges_Readings(CurrentSamples,NumberofReadings);
   
-  REQUIRE(NumberofContRange == 2);
-}
+  		REQUIRE(NumberofContRange == 2);
+	}
 
 
 
 **Impl_Iteration_04:**
 
-int detect_ContRanges_Readings(const float* CurrentSamples, int NumberofReadings)
-{ 
+	int detect_ContRanges_Readings(const float* CurrentSamples, int NumberofReadings)
+	{ 
 
-	1. Short the Input Array in Asscending order
-	2. Follow the below impl.
+		1. Short the Input Array in Asscending order
+		2. Follow the below impl.
 
-	int NumberofContRange=0;
-	int startNum=*CurrentSamples;
-	for(int itr=1; itr<NumberofReadings; itr++)
-	{
-		if((startNum+1)== *(CurrentSamples+itr) || (startNum)== *(CurrentSamples+itr))
+		int NumberofContRange=0;
+		int startNum=*CurrentSamples;
+		for(int itr=1; itr<NumberofReadings; itr++)
 			{
-				startNum=*(CurrentSamples+itr);
-			}
-		else
-			{
-				NumberofContRange++;
-				startNum=*(CurrentSamples+itr);
-			}
+			if((startNum+1)== *(CurrentSamples+itr) || (startNum)== *(CurrentSamples+itr))
+				{
+					startNum=*(CurrentSamples+itr);
+				}
+			else
+				{
+					NumberofContRange++;
+					startNum=*(CurrentSamples+itr);
+				}
 			
-	}
-	if((*(CurrentSamples+NumberofReadings-1)-1==*(CurrentSamples+NumberofReadings-2)) ||\
+			}
+		if((*(CurrentSamples+NumberofReadings-1)-1==*(CurrentSamples+NumberofReadings-2)) ||\
 			(*(CurrentSamples+NumberofReadings-1)==*(CurrentSamples+NumberofReadings-2)))
 		NumberofContRange++;
 		
-	return NumberofContRange;
-}
+		return NumberofContRange;
+	}
 
 
 
@@ -226,55 +228,56 @@ int detect_ContRanges_Readings(const float* CurrentSamples, int NumberofReadings
 
 
 **TEST_CASE_05**("Test the Number of continuous ranges and NumofReadings") 
-{
+
+	{
 	
-  float CurrentSamples[]={1,4,3,5,10,11,12,13};
-  int NumberofReadings=8;
-  int NumberofContRange=0;
-  int ExpNumofReadings[]={4,4};
+  		float CurrentSamples[]={1,4,3,5,10,11,12,13};
+  		int NumberofReadings=8;
+  		int NumberofContRange=0;
+  		int ExpNumofReadings[]={4,4};
   
-  NumberofContRange=detect_ContRanges_Readings(CurrentSamples,NumberofReadings);
+  		NumberofContRange=detect_ContRanges_Readings(CurrentSamples,NumberofReadings);
   
-  REQUIRE(NumberofContRange == 2);
+  		REQUIRE(NumberofContRange == 2);
   
-  for(int Itr=0;Itr<NumberofContRange;Itr++),
-  {
-  REQUIRE(NumberofReadings[Itr] == ExpNumofReadings[Itr]);
-  }
-}
+  		for(int Itr=0;Itr<NumberofContRange;Itr++),
+  		{
+  			REQUIRE(NumberofReadings[Itr] == ExpNumofReadings[Itr]);
+  		}
+	}
 
 
 
 **Impl_Iteration_05:**
 
-NumberofReadings[10]={4,4,4,4,4,4,4,4,4,4};
-int detect_ContRanges_Readings(const float* CurrentSamples, int NumberofReadings)
-{ 
+	NumberofReadings[10]={4,4,4,4,4,4,4,4,4,4};
+	int detect_ContRanges_Readings(const float* CurrentSamples, int NumberofReadings)
+	{ 
 
-	1. Short the Input Array in Asscending order
-	2. Follow the below impl.
+		1. Short the Input Array in Asscending order
+		2. Follow the below impl.
 
-	int NumberofContRange=0;
-	int startNum=*CurrentSamples;
-	for(int itr=1; itr<NumberofReadings; itr++)
-	{
-		if((startNum+1)== *(CurrentSamples+itr) || (startNum)== *(CurrentSamples+itr))
-			{
-				startNum=*(CurrentSamples+itr);
-			}
-		else
-			{
-				NumberofContRange++;
-				startNum=*(CurrentSamples+itr);
-			}
+		int NumberofContRange=0;
+		int startNum=*CurrentSamples;
+		for(int itr=1; itr<NumberofReadings; itr++)
+		{
+			if((startNum+1)== *(CurrentSamples+itr) || (startNum)== *(CurrentSamples+itr))
+				{
+					startNum=*(CurrentSamples+itr);
+				}
+			else
+				{
+					NumberofContRange++;
+					startNum=*(CurrentSamples+itr);
+				}
 			
-	}
-	if((*(CurrentSamples+NumberofReadings-1)-1==*(CurrentSamples+NumberofReadings-2)) ||\
+		}
+		if((*(CurrentSamples+NumberofReadings-1)-1==*(CurrentSamples+NumberofReadings-2)) ||\
 			(*(CurrentSamples+NumberofReadings-1)==*(CurrentSamples+NumberofReadings-2)))
-		NumberofContRange++;
+			NumberofContRange++;
 		
-	return NumberofContRange;
-}
+		return NumberofContRange;
+	}
 
 
 
@@ -285,27 +288,29 @@ int detect_ContRanges_Readings(const float* CurrentSamples, int NumberofReadings
 
 
 **TEST_CASE_06**("Test the Number of continuous ranges and NumofReadings") 
-{
 	
-  float CurrentSamples[]={1,4,3,5,10,11,12,13,14};
-  int NumberofReadings=8;
-  int NumberofContRange=0;
-  int ExpNumofReadings[]={4,5};
+	{
+	
+  		float CurrentSamples[]={1,4,3,5,10,11,12,13,14};
+  		int NumberofReadings=8;
+  		int NumberofContRange=0;
+  		int ExpNumofReadings[]={4,5};
   
-  NumberofContRange=detect_ContRanges_Readings(CurrentSamples,NumberofReadings);
+  		NumberofContRange=detect_ContRanges_Readings(CurrentSamples,NumberofReadings);
   
-  REQUIRE(NumberofContRange == 2);
+  		REQUIRE(NumberofContRange == 2);
   
-  for(int Itr=0;Itr<NumberofContRange;Itr++),
-  {
-  REQUIRE(NumberofReadings[Itr] == ExpNumofReadings[Itr]);
-  }
-}
+  		for(int Itr=0;Itr<NumberofContRange;Itr++),
+  		{
+  			REQUIRE(NumberofReadings[Itr] == ExpNumofReadings[Itr]);
+  		}
+	}
 
 
 
 **Impl_Iteration_06:**
-1. Find the number of readings in each range and stroge it in glabal array.
+
+	1. Find the number of readings in each range and stroge it in glabal array.
 
 
 
